@@ -2,63 +2,63 @@ import Image, { type StaticImageData } from 'next/image'
 import React from 'react'
 
 import { BriefcaseIcon } from '~/assets'
-import eightNinthsLogo from '~/assets/company/8ninths.jpeg'
-import abletiveLogo from '~/assets/company/abletive.png'
-import vvsLogo from '~/assets/company/vvs.png'
-import zolplayLogo from '~/assets/company/zolplay.png'
+import oxfordLogo from '~/assets/company/oxford.jpg'
+import edxLogo from '~/assets/company/edx.jpg'
+import harvardLogo from '~/assets/company/harvard.png'
+import purdueLogo from '~/assets/company/purduelogo.png'
 
 type Resume = {
   company: string
   title: string
-  start: string | { label: string; dateTime: number }
-  end: string | { label: string; dateTime: number }
+  // start: string | { label: string; dateTime: number }
+  // end: string | { label: string; dateTime: number }
   logo: StaticImageData
 }
 const resume: Resume[] = [
   {
-    company: '深圳市佐玩信息技术有限公司',
-    title: '创始人 CEO',
-    logo: zolplayLogo,
-    start: '2021',
-    end: {
-      label: '至今',
-      dateTime: new Date().getFullYear(),
-    },
+    company: 'Purdue Online Writing Lab',
+    title: 'Tutorials on general and academic writing',
+    logo: purdueLogo,
+    // start: '2021',
+    // end: {
+    //   label: '至今',
+    //   dateTime: new Date().getFullYear(),
+    // },
   },
   {
-    company: 'very very spaceship',
-    title: '软件工程师',
-    logo: vvsLogo,
-    start: '2018',
-    end: '2020',
+    company: 'Harvard Writing Center',
+    title: 'Writing support and resources offered by Harvard',
+    logo: harvardLogo,
+    // start: '2018',
+    // end: '2020',
   },
   {
-    company: '8ninths Inc.',
-    title: 'AR & 全栈工程师',
-    logo: eightNinthsLogo,
-    start: '2017',
-    end: '2018',
+    company: 'The Academic Word List',
+    title: 'How to expand your academic vocabulary using the list of 570 words.',
+    logo: oxfordLogo,
+    // start: '2017',
+    // end: '2018',
   },
   {
-    company: 'Abletive',
-    title: '创始人',
-    logo: abletiveLogo,
-    start: '2014',
-    end: '2016',
+    company: 'edx',
+    title: 'Explore online writing courses and programs',
+    logo: edxLogo,
+    // start: '2014',
+    // end: '2016',
   },
 ]
 
-function getRoleDate(date: Resume['start'] | Resume['end'], label = true) {
-  if (typeof date === 'string') {
-    return date
-  }
+// function getRoleDate(date: Resume['start'] | Resume['end'], label = true) {
+//   if (typeof date === 'string') {
+//     return date
+//   }
 
-  if (label) {
-    return date.label
-  } else {
-    return String(date.dateTime)
-  }
-}
+//   if (label) {
+//     return date.label
+//   } else {
+//     return String(date.dateTime)
+//   }
+// }
 
 export function Resume() {
   return (
@@ -87,7 +87,7 @@ export function Resume() {
               <dd className="text-xs text-zinc-500 dark:text-zinc-400">
                 {role.title}
               </dd>
-              <dt className="sr-only">日期</dt>
+              {/* <dt className="sr-only">日期</dt>
               <dd
                 className="ml-auto text-xs text-zinc-500/80 dark:text-zinc-400/80"
                 aria-label={`${getRoleDate(role.start)} 到 ${getRoleDate(
@@ -101,7 +101,7 @@ export function Resume() {
                 <time dateTime={getRoleDate(role.end, false)}>
                   {getRoleDate(role.end)}
                 </time>
-              </dd>
+              </dd> */}
             </dl>
           </li>
         ))}
