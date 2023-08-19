@@ -10,7 +10,7 @@ import { SocialLink } from '~/components/links/SocialLink'
 function Developer() {
   return (
     <span className="group">
-      <span className="font-mono">&lt;</span>开发者
+      <span className="font-mono">&lt;</span>Welcome to ENGCMP0200!
       <span className="font-mono">/&gt;</span>
       <span className="invisible inline-flex text-zinc-300 before:content-['|'] group-hover:visible group-hover:animate-typing dark:text-zinc-500" />
     </span>
@@ -26,7 +26,7 @@ function Designer() {
         <span className="absolute -bottom-0.5 -left-0.5 h-1.5 w-1.5 border border-lime-700 bg-zinc-50 dark:border-lime-400" />
         <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 border border-lime-700 bg-zinc-50 dark:border-lime-400" />
       </span>
-      设计师
+      English Composition Course
     </span>
   )
 }
@@ -35,19 +35,19 @@ function OCD() {
   return (
     <span className="group">
       <SparkleIcon className="mr-1 inline-flex transform-gpu transition-transform duration-500 group-hover:rotate-180" />
-      <span>细节控</span>
+      <span>AI-empowered</span>
     </span>
   )
 }
 
-function Founder() {
-  return (
-    <span className="group">
-      <UserSecurityIcon className="mr-1 inline-flex group-hover:fill-zinc-600/20 dark:group-hover:fill-zinc-200/20" />
-      <span>创始人</span>
-    </span>
-  )
-}
+// function Founder() {
+//   return (
+//     <span className="group">
+//       <UserSecurityIcon className="mr-1 inline-flex group-hover:fill-zinc-600/20 dark:group-hover:fill-zinc-200/20" />
+//       <span>创始人</span>
+//     </span>
+//   )
+// }
 
 export function Headline() {
   return (
@@ -63,9 +63,13 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />，<Designer />，
+        <Developer />
         <br />
-        <OCD />，<Founder />
+        <OCD />
+        <br />
+        <Designer />
+        <br />
+        {/* <Founder /> */}
       </motion.h1>
       <motion.p
         className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
@@ -80,10 +84,10 @@ export function Headline() {
         }}
       >
         <Balancer>
-          Welcome to ENGCMP0200
-          <PeekabooLink href="https://zolplay.cn">佐玩</PeekabooLink>
-          创始人，目前带领着佐玩致力于创造一个充满创造力的工作环境，同时鼓励团队创造影响世界的产品。
-          我热爱开发，设计，创新，享受生活，以及在未知领域中探索。
+          Boost your academic writing with our <b>AI innovated</b> course
+          <li>Tailored exercises only for yourself</li>
+          <li>real-time feedback</li>
+          Let's embark on this exciting journey & elevate your writing skills and creativity. 🥳
         </Balancer>
       </motion.p>
       <motion.div
@@ -98,7 +102,7 @@ export function Headline() {
           delay: 0.25,
         }}
       >
-        <SocialLink
+        {/* <SocialLink
           href="https://cali.so/twitter"
           aria-label="我的推特"
           platform="twitter"
@@ -128,7 +132,7 @@ export function Headline() {
           href="mailto:hi@cali.so"
           aria-label="我的邮箱"
           platform="mail"
-        />
+        /> */}
       </motion.div>
     </div>
   )

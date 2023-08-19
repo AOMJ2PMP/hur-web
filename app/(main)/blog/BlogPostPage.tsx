@@ -166,7 +166,7 @@ export function BlogPostPage({
 
                 <span className="inline-flex items-center space-x-1.5">
                   <HourglassIcon />
-                  <span>{post.readingTime.toFixed(0)}分钟阅读</span>
+                  <span>{post.readingTime.toFixed(0)}minites reading</span>
                 </span>
               </motion.div>
             </header>
@@ -190,7 +190,7 @@ export function BlogPostPage({
         <section className="mb-12 mt-32">
           <h2 className="mb-6 flex items-center justify-center text-lg font-bold text-zinc-900 dark:text-zinc-100">
             <PencilSwooshIcon className="h-5 w-5 flex-none" />
-            <span className="ml-2">相关文章</span>
+            <span className="ml-2">related artilces</span>
           </h2>
 
           <div className="mt-6 grid grid-cols-1 justify-center gap-6 md:grid-cols-[repeat(auto-fit,75%)] lg:grid-cols-[repeat(auto-fit,45%)] lg:gap-8">
