@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion'
 import Balancer from 'react-wrap-balancer'
 
-import { SparkleIcon, UserSecurityIcon } from '~/assets'
-import { PeekabooLink } from '~/components/links/PeekabooLink'
-import { SocialLink } from '~/components/links/SocialLink'
+import { SparkleIcon } from '~/assets'// deleted UserSecurityIcon
+// import { PeekabooLink } from '~/components/links/PeekabooLink'
+// import { SocialLink } from '~/components/links/SocialLink'
 
 function Developer() {
   return (
@@ -87,7 +87,7 @@ export function Headline() {
           Boost your academic writing with our <b>AI innovated</b> course
           <li>Tailored exercises only for yourself</li>
           <li>real-time feedback</li>
-          Let's embark on this exciting journey & elevate your writing skills and creativity. 🥳
+          Let&apos;s embark on this exciting journey & elevate your writing skills and creativity. 🥳
         </Balancer>
       </motion.p>
       <motion.div

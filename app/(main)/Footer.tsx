@@ -2,8 +2,8 @@ import { sql } from 'drizzle-orm'
 import Link from 'next/link'
 import React from 'react'
 
-import { CursorClickIcon, UsersIcon } from '~/assets'
-import { PeekabooLink } from '~/components/links/PeekabooLink'
+import { UsersIcon } from '~/assets'
+// import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { Container } from '~/components/ui/Container'
 import { kvKeys } from '~/config/kv'
 import { navigationItems } from '~/config/nav'
@@ -12,7 +12,7 @@ import { env } from '~/env.mjs'
 import { prettifyNumber } from '~/lib/math'
 import { redis } from '~/lib/redis'
 
-import { Newsletter } from './Newsletter'
+// import { Newsletter } from './Newsletter'
 
 function NavLink({
   href,
@@ -62,44 +62,44 @@ async function TotalPageViews() {
   )
 }
 
-type VisitorGeolocation = {
-  country: string
-  city?: string
-  flag: string
-}
-async function LastVisitorInfo() {
-  let lastVisitor: VisitorGeolocation | undefined = undefined
-  if (env.VERCEL_ENV === 'production') {
-    const [lv, cv] = await redis.mget<VisitorGeolocation[]>(
-      kvKeys.lastVisitor,
-      kvKeys.currentVisitor
-    )
-    lastVisitor = lv
-    await redis.set(kvKeys.lastVisitor, cv)
-  }
+// type VisitorGeolocation = {
+//   country: string
+//   city?: string
+//   flag: string
+// }
+// async function LastVisitorInfo() {
+//   let lastVisitor: VisitorGeolocation | undefined = undefined
+//   if (env.VERCEL_ENV === 'production') {
+//     const [lv, cv] = await redis.mget<VisitorGeolocation[]>(
+//       kvKeys.lastVisitor,
+//       kvKeys.currentVisitor
+//     )
+//     lastVisitor = lv
+//     await redis.set(kvKeys.lastVisitor, cv)
+//   }
 
-  if (!lastVisitor) {
-    lastVisitor = {
-      country: 'US',
-      flag: '🇺🇸',
-    }
-  }
+//   if (!lastVisitor) {
+//     lastVisitor = {
+//       country: 'US',
+//       flag: '🇺🇸',
+//     }
+//   }
 
-  return (
-    <span className="flex items-center justify-center gap-1 text-xs text-zinc-500 dark:text-zinc-400 md:justify-start">
-      <CursorClickIcon className="h-4 w-4" />
-      <span>
-        最近访客来自&nbsp;
-        {[lastVisitor.city, lastVisitor.country].filter(Boolean).join(', ')}
-      </span>
-      <span className="font-medium">{lastVisitor.flag}</span>
-    </span>
-  )
-}
+//   return (
+//     <span className="flex items-center justify-center gap-1 text-xs text-zinc-500 dark:text-zinc-400 md:justify-start">
+//       <CursorClickIcon className="h-4 w-4" />
+//       <span>
+//         最近访客来自&nbsp;
+//         {[lastVisitor.city, lastVisitor.country].filter(Boolean).join(', ')}
+//       </span>
+//       <span className="font-medium">{lastVisitor.flag}</span>
+//     </span>
+//   )
+// }
 
 export async function Footer() {
   const {
-    rows: [count],
+    rows: [],//missing : count
   } = await db.execute(
     sql`SELECT 
     (SELECT COUNT(*) FROM subscribers WHERE subscribed_at IS NOT NULL) as subscribers`

@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 
-import image1 from '~/assets/highlights/robyn_headshot.jpg'
-import image2 from '~/assets/highlights/scupi_logo.jpg'
+import image5 from '~/assets/highlights/chatgpt_logo.jpg'
 import image3 from '~/assets/highlights/DAWS_shot.png'
 import image4 from '~/assets/highlights/go_scupians.jpg'
-import image5 from '~/assets/highlights/chatgpt_logo.jpg'
+import image1 from '~/assets/highlights/robyn_headshot.jpg'
+import image2 from '~/assets/highlights/scupi_logo.jpg'
 import image6 from '~/assets/highlights/typing_on_laptop.jpg'
 
 const images = [image1, image2, image3, image4, image5, image6]
