@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: 'ENGCMP0200',
     locale: 'zh_CN',
     type: 'website',
-    url: 'https://cali.so',//改一下
+    url: 'https://hur-web.vercel.app',
   },
   twitter: {
     site: '@thecalicastle',
@@ -61,6 +61,7 @@ export const metadata: Metadata = {
   },
 }
 
+// const chatbotId = "cstgQOQ_E7PwrqcDCarHg"
 export default function RootLayout({
   children,
 }: {
@@ -73,6 +74,27 @@ export default function RootLayout({
         className={`${sansFont.variable} m-0 h-full p-0 font-sans antialiased`}
         suppressHydrationWarning
       >
+        <head>
+          
+          <script
+                type="text/javascript"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                  (function(d, t) {
+                    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                    v.onload = function() {
+                      window.voiceflow.chat.load({
+                        verify: { projectID: '64eab651a0d9820008aacb2f' },
+                        url: 'https://general-runtime.voiceflow.com',
+                        versionID: 'production'
+                      });
+                    }
+                    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+                })(document, 'script');
+                  `,
+                }}
+              />
+        </head>
         <body className="flex h-full flex-col">
           <ThemeProvider
             attribute="class"
@@ -83,6 +105,16 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </body>
+      {/* <script>
+        window.chatbaseConfig = {
+          chatbotId
+        }
+      </script>
+      <script
+        src="https://www.chatbase.co/embed.min.js" 
+        id="cstgQOQ_E7PwrqcDCarHg"
+        defer
+      ></script> */}
       </html>
     </ClerkProvider>
   )
