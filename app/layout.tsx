@@ -76,7 +76,7 @@ export default function RootLayout({
       >
         <head>
           
-          <script
+          {/* <script
                 type="text/javascript"
                 dangerouslySetInnerHTML={{
                   __html: `
@@ -93,7 +93,7 @@ export default function RootLayout({
                 })(document, 'script');
                   `,
                 }}
-              />
+              /> */}
         </head>
         <body className="flex h-full flex-col">
           <ThemeProvider
